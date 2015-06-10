@@ -106,7 +106,7 @@ function buildWinApp (opts, cb, newApp) {
 
       var exePath = path.join(opts.out || process.cwd(), opts.name + '-win32', opts.name + '.exe')
 
-      rcedit(exePath, {icon: opts.icon}, function (err) {
+      rcedit(exePath, {icon: opts.icon, 'product-version': opts.productVersion, 'file-version': opts.fileVersion}, function (err) {
         cb(err, finalPath)
       })
 
